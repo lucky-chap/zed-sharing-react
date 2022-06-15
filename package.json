@@ -2,6 +2,20 @@
   "name": "zed-sharing-react",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prepare": "npx husky install",
+    "prepare:staged": "npx lint-staged",
+    "lint:fix": "eslint . --fix && yarn format",
+    "check:types": "tsc --pretty --noEmit",
+    "format": "prettier --write . --ignore-path .prettierignore",
+    "check:format": "prettier --check .",
+    "check:lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
+    "check:all": "yarn check:format && yarn check:lint && yarn check:types"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -15,12 +29,6 @@
     "react-scripts": "5.0.1",
     "typescript": "^4.7.3",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +46,37 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "commitlint": "^17.0.2",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-react-hooks": "4.5.0",
+    "eslint-plugin-security": "1.5.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "eslint-plugin-sonarjs": "0.13.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
+    "prettier": "^2.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn check:format"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,css,html}": [
+      "yarn check:types"
     ]
   }
 }
