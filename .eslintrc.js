@@ -52,7 +52,7 @@ module.exports = {
     ],
     "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-explicit-any": "off",
     "react/react-in-jsx-scope": "off",
     "import/extensions": [
       "error",
