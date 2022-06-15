@@ -76,7 +76,8 @@
   },
   "lint-staged": {
     "src/**/*.{ts,css,html}": [
-      "yarn check:types"
+      "yarn check:types",
+      "yarn format"
     ]
   }
 }
