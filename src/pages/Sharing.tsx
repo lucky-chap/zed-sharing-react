@@ -11,7 +11,10 @@ import {
   PortableWifiOff,
   WifiTethering,
 } from "@material-ui/icons";
+
 import { observer } from "mobx-react-lite";
+import RoomService from "../services/RoomService";
+import SendIllustration from "../assets/illustrations/plane.png";
 
 const Wrapper = styled.div`
   display: flex;
