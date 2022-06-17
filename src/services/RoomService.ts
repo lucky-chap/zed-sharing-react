@@ -49,7 +49,7 @@ class RoomService {
    * @returns roomSlug - A kind of human readable room id (contains a noun and an adjective)
    */
 
-  getCurrentSlug = (): string => {
+  getCurrentRoomSlug = (): string => {
     return window.location.href.split("room/")?.[1];
   };
 }

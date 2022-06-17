@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const Wrapper = styled.div<ButtonProps>`
   color: white;
-  background-color: #e91e63;
+  background-color: #ee4;
   padding: 16px 24px;
   border-radius: 8px;
   font-weight: 700;
@@ -31,7 +31,7 @@ const Wrapper = styled.div<ButtonProps>`
   }};
 
   &:hover {
-    background-color: #ad1457;
+    background-color: #eee;
   }
 `;
 

@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-object-injection */
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
@@ -15,6 +16,21 @@ import {
 import { observer } from "mobx-react-lite";
 import RoomService from "../services/RoomService";
 import SendIllustration from "../assets/illustrations/plane.png";
+
+import { FileDropper, FileReceiver } from "../components/Sharing/FileDropper";
+import { LoadingState } from "../components/Sharing/LoadingState";
+import {
+  LOADING_STATE_MESSAGES,
+  LOADING_STATES,
+  ERROR_STATES,
+  ERROR_STATE_MESSAGES,
+} from "../constants/Sharing";
+
+import { ErrorState } from "../components/Sharing/ErrorState";
+import Button from "../components/Button";
+import Text from "../components/Text";
+import FileStore from "../store/FileStore";
+import { WebRTCConnectionStatus } from "../types/WebRTC";
 
 const Wrapper = styled.div`
   display: flex;
@@ -148,8 +164,205 @@ const PeerStatusWrapper = styled.div`
   }
 `;
 
-const Sharing = () => {
-  return "Sh";
+const Sharing = (): React.ReactElement => {
+  const [isRoomJoinedOrCreated, setIsRoomJoined] = useState(false);
+  const [currentLoadingState, setLoadingState] = useState("");
+  const [currentErrorState, setErrorState] = useState("");
+  const [isRoomLinkCopied, setIsRoomLinkCopied] = useState(false);
+
+  /**
+   * Function to handle the joining of a room
+   * The room is used to transfer signalling information for
+   * webRTC connection between peers
+   *
+   * @param roomSlug - Room to connect
+   */
+  const handleRoomConnect = (roomSlug: string) => {
+    RoomService.joinRoom(roomSlug);
+    setLoadingState("");
+    setIsRoomJoined(true);
+  };
+
+  /**
+   * Function to handle creation of a room
+   * The room is used to transfer signalling information for
+   * webRTC connection between peers
+   */
+  const handleCreateRoom = async () => {
+    setLoadingState(LOADING_STATES.create);
+
+    try {
+      const roomSlug = await RoomService.createRoom();
+
+      window.history.pushState({}, "room-page", `/room/${roomSlug}`);
+
+      RoomService.joinRoom(roomSlug);
+      setErrorState("");
+      setIsRoomJoined(true);
+    } catch (error) {
+      setErrorState(ERROR_STATES.create);
+      // eslint-disable-next-line no-console
+      console.log(
+        "Sharing~handleCreateRoom: Error occurred while creating new room",
+        "\nReason: ",
+        error
+      );
+    } finally {
+      setLoadingState("");
+    }
+  };
+
+  /**
+   * Function to handle and return various state like loading, error and normal
+   *
+   * @returns React Element
+   */
+  const getActionWrapperContent = () => {
+    if (currentLoadingState) {
+      return (
+        <LoadingState content={LOADING_STATE_MESSAGES[currentLoadingState]} />
+      );
+    }
+
+    if (currentErrorState) {
+      return (
+        <ErrorState
+          handleRetry={handleRoomConnect}
+          handleCreateNewRoom={handleCreateRoom}
+          roomSlug={RoomService.getCurrentRoomSlug()}
+          content={ERROR_STATE_MESSAGES[currentErrorState]}
+        />
+      );
+    }
+
+    if (!isRoomJoinedOrCreated) {
+      return (
+        <CreateNewRoomWrapper>
+          <Text
+            fontSize="20px"
+            content="Create a room first to start sharing"
+          />
+          <CreateNewRoomButtonWrapper>
+            <Button onClick={handleCreateRoom} width="fit-content">
+              Create new room
+            </Button>
+          </CreateNewRoomButtonWrapper>
+        </CreateNewRoomWrapper>
+      );
+    }
+
+    if (Object.keys(FileStore.filesReceiveProgress).length) {
+      return <FileReceiver />;
+    }
+
+    return <FileDropper />;
+  };
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+
+    setIsRoomLinkCopied(true);
+
+    setTimeout(() => {
+      setIsRoomLinkCopied(false);
+    }, 3000);
+  };
+
+  /**
+   * This checks if user want to connect to a pre-existing sharing room
+   */
+  useEffect(() => {
+    const roomSlug = RoomService.getCurrentRoomSlug();
+
+    if (roomSlug) {
+      setLoadingState(LOADING_STATES.join);
+      handleRoomConnect(roomSlug);
+    }
+  }, []);
+
+  const IconStyles = { fontSize: "18px" };
+
+  return (
+    <Wrapper>
+      <Container>
+        <ActionAndContentWrapper>
+          <ActionWrapper>{getActionWrapperContent()}</ActionWrapper>
+          <Content>
+            {isRoomJoinedOrCreated && (
+              <>
+                <RoomLinkContainer>
+                  <Text
+                    content="Copy and share this link with your friend"
+                    fontSize="14px"
+                    fontWeight="600"
+                  />
+                  <RoomLinkActionContainer>
+                    <RoomLink value={window.location.href} readOnly />
+                    <CopyLink onClick={handleCopyLink}>
+                      {isRoomLinkCopied ? (
+                        <CheckCircleOutlineRounded style={IconStyles} />
+                      ) : (
+                        <FileCopyOutlined style={IconStyles} />
+                      )}
+                    </CopyLink>
+                  </RoomLinkActionContainer>
+                </RoomLinkContainer>
+
+                <StatusesWrapper>
+                  <Text
+                    content="Connection Statuses"
+                    fontSize="14px"
+                    fontWeight="600"
+                  />
+
+                  <StatusesActionWrapper>
+                    <WebRTCStatusWrapper>
+                      <Text
+                        content="WebRTC Connection"
+                        fontSize="12px"
+                        fontWeight="800"
+                      />
+                      {FileStore.webRTCConnectionStatus ===
+                      WebRTCConnectionStatus.CONNECTED ? (
+                        <WifiTethering style={{ color: "#81c784" }} />
+                      ) : (
+                        <PortableWifiOff style={{ color: "#e57373" }} />
+                      )}
+                    </WebRTCStatusWrapper>
+                    <PeerStatusWrapper>
+                      <Text
+                        content="Peer Connection"
+                        fontSize="12px"
+                        fontWeight="800"
+                      />
+                      {FileStore.peerConnectionStatus ? (
+                        <People style={{ color: "#81c784" }} />
+                      ) : (
+                        <Person style={{ color: "#e57373" }} />
+                      )}
+                    </PeerStatusWrapper>
+                  </StatusesActionWrapper>
+                </StatusesWrapper>
+              </>
+            )}
+
+            <Heading>
+              <Text
+                content="Simple P2P file sharing"
+                fontSize="32px"
+                fontWeight="800"
+              />
+            </Heading>
+            <Text content="Some very nice description here" lineHeight="24px" />
+            <Illustration
+              src={SendIllustration}
+              enlarge={!isRoomJoinedOrCreated}
+            />
+          </Content>
+        </ActionAndContentWrapper>
+      </Container>
+    </Wrapper>
+  );
 };
 
-export default Sharing;
+export default observer(Sharing);

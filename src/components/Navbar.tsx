@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
-import SendIcon from "@material-ui/icons/Send";
-import Text from "./Text";
-import Logo from "../assets/icons/logo.png";
+// import Text from "./Text";
+import Logo from "../assets/icons/logo.jpg";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -16,7 +14,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const SendightLogoContainer = styled.a`
+const ZedLogoContainer = styled.a`
   text-decoration: none;
   color: white;
 `;
@@ -32,24 +30,14 @@ const Title = styled.span`
 const Navbar = (): React.ReactElement => {
   return (
     <Wrapper>
-      <SendightLogoContainer href="/">
-        <SendIcon
-          style={{
-            color: "#E91E63",
-            fontSize: "32px",
-            transform: "rotate(-45deg)",
-          }}
-        />
-        <Title>
-          <Text content="Send" fontSize="32px" fontWeight="800" />
-          ight
-        </Title>
-      </SendightLogoContainer>
+      <ZedLogoContainer href="/">
+        <Title>Something nice</Title>
+      </ZedLogoContainer>
 
       <LogoContainer
         target="_blank"
         rel="noopener noreferrer"
-        href="https://github.com/thephilomaths/sendight-frontend"
+        href="https://github.com/lucky-chap/zed-sharing-react"
       >
         <img src={Logo} alt="Github icon" width="32px" />
       </LogoContainer>
