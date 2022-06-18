@@ -15,7 +15,7 @@ import {
 
 import { observer } from "mobx-react-lite";
 import RoomService from "../services/RoomService";
-import SendIllustration from "../assets/illustrations/plane.png";
+import SendIllustration from "../assets/icons/plane.png";
 
 import { FileDropper, FileReceiver } from "../components/Sharing/FileDropper";
 import { LoadingState } from "../components/Sharing/LoadingState";
@@ -109,7 +109,7 @@ const CopyLink = styled.div`
   transition: 0.3s;
   border-radius: 8px;
   &:hover {
-    background-color: #0ea5e9;
+    background-color: #5ea1b8;
     transition: 0.3s;
   }
   &:active {
@@ -119,11 +119,17 @@ const CopyLink = styled.div`
 
 const Heading = styled.div``;
 
+const IllustrationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Illustration = styled.img<{ enlarge: boolean }>`
   margin-top: 32px;
   height: ${({ enlarge }) => {
     return enlarge ? "250px" : "170px";
   }};
+  max-width: 100%;
 `;
 
 const CreateNewRoomWrapper = styled.div`
@@ -359,10 +365,13 @@ const Sharing = (): React.ReactElement => {
               lineHeight="24px"
               color="#9ca3af"
             />
-            <Illustration
-              src={SendIllustration}
-              enlarge={!isRoomJoinedOrCreated}
-            />
+            <IllustrationWrapper>
+              {" "}
+              <Illustration
+                src={SendIllustration}
+                enlarge={!isRoomJoinedOrCreated}
+              />
+            </IllustrationWrapper>
           </Content>
         </ActionAndContentWrapper>
       </Container>

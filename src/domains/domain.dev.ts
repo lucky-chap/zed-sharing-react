@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  baseUrl: "http://localhost:9000",
+  baseUrl: `${process.env.REACT_APP_DOMAIN_DEV}`,
 };

@@ -16,11 +16,12 @@ const FilesWrapper = styled.div`
   height: 380px;
   width: 100%;
   display: flex;
+  border-radius: 5px;
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
   margin-bottom: 24px;
-  background-color: #000000;
+  background-color: #111827;
 
   overflow-y: auto;
   ::-webkit-scrollbar {
@@ -28,18 +29,18 @@ const FilesWrapper = styled.div`
     height: 3px;
   }
   ::-webkit-scrollbar-track {
-    background-color: #646464;
+    background-color: #111827;
   }
   ::-webkit-scrollbar-track-piece {
-    background-color: #1e1e1e;
+    background-color: #111827;
   }
   ::-webkit-scrollbar-thumb {
     height: 50px;
-    background-color: #666;
+    background-color: #111827;
     border-radius: 3px;
   }
   ::-webkit-resizer {
-    background-color: #666;
+    background-color: #111827;
   }
 `;
 
@@ -90,7 +91,9 @@ const FileReceiver = () => {
   return (
     <Wrapper>
       <FilesWrapper>{getFilesData()}</FilesWrapper>
-      <Button onClick={handleClearDownloads}>Clear Downloads</Button>
+      <Button backgroundColor="#ef4444" onClick={handleClearDownloads}>
+        Clear Downloads
+      </Button>
     </Wrapper>
   );
 };

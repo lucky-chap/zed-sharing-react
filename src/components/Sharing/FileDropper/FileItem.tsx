@@ -35,7 +35,7 @@ const ActionButton = styled.button`
   margin-left: 12px;
   cursor: pointer;
   &:hover {
-    color: #e86e61;
+    color: #5ea1b8;
     transition: 0.3s;
   }
 `;
@@ -49,15 +49,15 @@ const ProgressContainer = styled.div`
 const Progress = styled.progress`
   height: 4px;
   border: none;
-  color: #e86e61;
+  color: #5ea1b8;
   border-radius: 16px;
   margin-right: 8px;
   &::-webkit-progress-value {
-    background: #e86e61;
+    background: #5ea1b8;
     border-radius: 16px;
   }
   &::-moz-progress-bar {
-    background: #e86e61;
+    background: #5ea1b8;
     border-radius: 16px;
   }
   &::-webkit-progress-bar {
@@ -108,7 +108,7 @@ const FileItem = (props: IProps): React.ReactElement => {
                 content={FileDropperUtil.formatBytes(progress)}
                 fontSize="12px"
               />{" "}
-              &nbsp;/&nbsp;
+              &nbsp;<span style={{ color: "white" }}>/</span>&nbsp;
             </>
           ) : (
             ""

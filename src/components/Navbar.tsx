@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React from "react";
 import styled from "styled-components";
 // import Text from "./Text";
-import Logo from "../assets/icons/github.png";
+import Logo from "../assets/icons/plane.png";
+import GitHubLogo from "../assets/icons/github.png";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -10,7 +13,7 @@ const Wrapper = styled.div`
   width: 100%;
   padding: 16px 48px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 `;
 
@@ -30,16 +33,20 @@ const Title = styled.span`
 const Navbar = (): React.ReactElement => {
   return (
     <Wrapper>
-      <ZedLogoContainer href="/">
-        <Title>Zed</Title>
-      </ZedLogoContainer>
+      <LogoContainer
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/lucky-chap/zed-sharing-react"
+      >
+        <img src={Logo} alt="Github icon" width="50px" />
+      </LogoContainer>
 
       <LogoContainer
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/lucky-chap/zed-sharing-react"
       >
-        <img src={Logo} alt="Github icon" width="32px" />
+        <img src={GitHubLogo} alt="Github icon" width="22px" />
       </LogoContainer>
     </Wrapper>
   );
