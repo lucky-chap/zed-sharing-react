@@ -37,7 +37,7 @@ const Wrapper = styled.div<{ isDragging: boolean; containItems: boolean }>`
           };
           padding: 24px;
           &:hover {
-            background-color: #111111;
+            background-color: #111827;
             transition: 0.3s;
           }
         `;
@@ -64,10 +64,10 @@ const File = styled.input`
 
 const DroppedFilesWrapper = styled.div`
   width: 100%;
-  background-color: #000;
+  background-color: #111827;
   padding: 32px;
   border-radius: 5px;
-  border: 1px solid rgba(12, 12, 13, 1);
+  border: 1px solid #111827;
   height: 380px;
   max-height: 380px;
   overflow-y: auto;
@@ -118,10 +118,7 @@ const AddMoreSection = styled.div`
   cursor: pointer;
 `;
 
-const IconStyles = {
-  color: "#E91E63",
-  fontSize: "48px",
-};
+const IconStyles = { fontSize: "48px", color: "white" };
 
 const FileDropper = (): React.ReactElement => {
   const [isDragging, setIsDragging] = useState(false);
@@ -282,7 +279,6 @@ const FileDropper = (): React.ReactElement => {
           </DroppedFilesWrapper>
           <AddMoreAndSizeWrapper>
             <AddMoreSection onClick={onAddClickHandler}>
-              <AddCircleOutlineIcon />
               &nbsp;
               <Text content="Click here to add more" />
             </AddMoreSection>

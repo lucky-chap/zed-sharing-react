@@ -50,6 +50,7 @@ const Wrapper = styled.span<TextProps>`
 interface IProps extends TextProps {
   content: string;
   title?: string;
+  color?: string;
 }
 
 const Text = (props: IProps): React.ReactElement => {

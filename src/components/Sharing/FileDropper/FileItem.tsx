@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: rgba(12, 12, 13, 1);
+  background-color: #1f2937;
   border: 1px solid rgba(42, 42, 46, 1);
   border-radius: 5px;
   padding: 16px;

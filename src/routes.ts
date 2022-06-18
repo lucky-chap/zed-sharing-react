@@ -1,11 +1,7 @@
 /* eslint-disable import/no-mutable-exports */
-let socketURL: string;
+const socketURL = "https://lucky-zed.xyz";
 
-if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-  socketURL = "https://localhost:9000";
-} else {
-  socketURL = "https://api.zed-sharing.com";
-}
+// You can test a route here: https://lucky-zed.xyz/test
 
 const getSlugRoute = `${socketURL}/slug`;
 

@@ -45,8 +45,9 @@ const Container = styled.div`
   height: fit-content;
   width: 1024px;
   padding: 32px;
-  border: 1px solid rgba(42, 42, 46, 1);
-  background-color: rgba(12, 12, 13, 1);
+  margin-top: 32px;
+  border: 1px solid #1f2937;
+  background-color: #1f2937;
   border-radius: 8px;
 `;
 
@@ -96,7 +97,7 @@ const RoomLink = styled.input`
   margin-right: 8px;
   background: transparent;
   color: white;
-  border: 1px solid rgba(42, 42, 46, 1);
+  border: 1px solid #9ca3af;
   font-size: 14px;
 `;
 
@@ -108,7 +109,7 @@ const CopyLink = styled.div`
   transition: 0.3s;
   border-radius: 8px;
   &:hover {
-    background-color: #e91e63;
+    background-color: #0ea5e9;
     transition: 0.3s;
   }
   &:active {
@@ -143,7 +144,7 @@ const StatusesActionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 8px 12px;
-  border: 1px solid rgba(42, 42, 46, 1);
+  border: 1px solid #9ca3af;
   border-radius: 8px;
   margin-top: 4px;
 `;
@@ -280,7 +281,7 @@ const Sharing = (): React.ReactElement => {
     }
   }, []);
 
-  const IconStyles = { fontSize: "18px" };
+  const IconStyles = { fontSize: "18px", color: "white" };
 
   return (
     <Wrapper>
@@ -326,7 +327,7 @@ const Sharing = (): React.ReactElement => {
                       WebRTCConnectionStatus.CONNECTED ? (
                         <WifiTethering style={{ color: "#81c784" }} />
                       ) : (
-                        <PortableWifiOff style={{ color: "#e57373" }} />
+                        <PortableWifiOff style={{ color: "#ef4444" }} />
                       )}
                     </WebRTCStatusWrapper>
                     <PeerStatusWrapper>
@@ -338,7 +339,7 @@ const Sharing = (): React.ReactElement => {
                       {FileStore.peerConnectionStatus ? (
                         <People style={{ color: "#81c784" }} />
                       ) : (
-                        <Person style={{ color: "#e57373" }} />
+                        <Person style={{ color: "#ef4444" }} />
                       )}
                     </PeerStatusWrapper>
                   </StatusesActionWrapper>
@@ -353,7 +354,11 @@ const Sharing = (): React.ReactElement => {
                 fontWeight="800"
               />
             </Heading>
-            <Text content="Some very nice description here" lineHeight="24px" />
+            <Text
+              content="Share files with your friends and colleagues with zero hassle"
+              lineHeight="24px"
+              color="#9ca3af"
+            />
             <Illustration
               src={SendIllustration}
               enlarge={!isRoomJoinedOrCreated}

@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 // import Text from "./Text";
-import Logo from "../assets/icons/logo.jpg";
+import Logo from "../assets/icons/github.png";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  background-color: black;
+  // background-color: #1f2937;
   height: 80px;
   width: 100%;
   padding: 16px 48px;
@@ -31,7 +31,7 @@ const Navbar = (): React.ReactElement => {
   return (
     <Wrapper>
       <ZedLogoContainer href="/">
-        <Title>Something nice</Title>
+        <Title>Zed</Title>
       </ZedLogoContainer>
 
       <LogoContainer

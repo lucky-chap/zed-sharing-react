@@ -23,7 +23,7 @@ const LoadingState = (props: IProps): React.ReactElement => {
 
   return (
     <Wrapper>
-      <CircularProgress style={{ color: "#e86e61" }} />
+      <CircularProgress style={{ color: "#0ea5e9" }} />
       <ContentWrapper>
         <Text content={content || ""} color="#eee" />
       </ContentWrapper>
