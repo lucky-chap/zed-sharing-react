@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+<div id="top"></div>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/lucky-chap/zed-sharing-node/">
+    <img src="public/android-chrome-512x512.png" alt="Logo" width="80" height="80">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">zed-sharing-react</h3>
 
-## Available Scripts
+  <p align="center">
+    Front End for file sharing app built with the MERN Stack
+    <br />
+    <br />
+    <a href="https://github.com/lucky-chap/zed-sharing-node/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/lucky-chap/zed-sharing-node/issues">Request Feature</a>
+  </p>
+</div>
 
-In the project directory, you can run:
+<!-- ABOUT THE PROJECT -->
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is the Front End for Zed, a file sharing platform built with modern technologies
+❤️➕🌑
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Built with
 
-### `npm test`
+- [ReactJS](https://reactjs.org/)
+- [MobX](https://mobx.js.org/)
+- [WebRTC](https://webrtc.org/)
+- [SocketIO](https://socket.io/)
+- [StyledComponents](https://styled-components.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- GETTING STARTED -->
 
-### `npm run build`
+## Running the app locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get a local copy up and running follow these simple steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Clone this repo (have git installed)
+  ```sh
+  git clone https://github.com/lucky-chap/zed-sharing-react.git
+  ```
+- Install dependencies (have nodejs installed)
+  ```sh
+  cd zed-sharing-react
+  yarn install # or npm install
+  ```
+- Make sure you create a `.env.local` file and fill it with `.env.example` as reference
+- In order for this app to work, you'd have to have the backend. Mine's over [here](https://github.com/lucky-chap/zed-sharing-node)
+- Now run the app
+  ```sh
+  yarn start
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- CONTRIBUTING -->
 
-### `npm run eject`
+## Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You rock! Any contributions you make are **greatly appreciated**.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you have a suggestion that would make this better, please fork the repo and create a pull
+request. You can also simply open an issue with the tag "enhancement". Don't forget to give the
+project a star! Thanks again!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/coolStuff`)
+3. Commit your Changes (`git commit -m 'Add some coolStuff'`)
+4. Push to the Branch (`git push origin feature/coolStuff`)
+5. Open a Pull Request
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- LICENSE -->
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- CONTACT -->
+
+## Come say hi 👋
+
+- Twitter: [@hunchodotdev](https://twitter.com/hunchodotdev)
+- Discord: [@FatKidOnFiree#1355](https://discordapp.com/users/FatKidOnFiree#1355)
+- Reddit: [@huncho_dot_dev](https://www.reddit.com/user/huncho_dot_dev/)
+
+## Credits 👌⚡
+
+Many thanks to all the people who helped me understand and build this. God bless y'all 💨

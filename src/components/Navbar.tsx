@@ -17,27 +17,12 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const ZedLogoContainer = styled.a`
-  text-decoration: none;
-  color: white;
-`;
-
 const LogoContainer = styled.a``;
-
-const Title = styled.span`
-  font-size: 32px;
-  font-weight: 400;
-  margin-left: 6px;
-`;
 
 const Navbar = (): React.ReactElement => {
   return (
     <Wrapper>
-      <LogoContainer
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/lucky-chap/zed-sharing-react"
-      >
+      <LogoContainer target="_blank" rel="noopener noreferrer" href="/">
         <img src={Logo} alt="Github icon" width="50px" />
       </LogoContainer>
 
