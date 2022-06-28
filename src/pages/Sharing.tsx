@@ -45,7 +45,6 @@ const Container = styled.div`
   height: fit-content;
   width: 1024px;
   padding: 32px;
-  margin-top: 32px;
   border: 1px solid #1f2937;
   background-color: #1f2937;
   border-radius: 8px;

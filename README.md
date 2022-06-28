@@ -1,6 +1,5 @@
-<div id="top"></div>
-<!-- PROJECT LOGO -->
-<br />
+<img src='public/banner.jpg' alt='banner'>
+
 <div align="center">
   <a href="https://github.com/lucky-chap/zed-sharing-node/">
     <img src="public/android-chrome-512x512.png" alt="Logo" width="80" height="80">
@@ -9,7 +8,7 @@
   <h3 align="center">zed-sharing-react</h3>
 
   <p align="center">
-    Front End for file sharing app built with the MERN Stack
+    Frontend for file sharing app built with the MERN Stack
     <br />
     <br />
     <a href="https://github.com/lucky-chap/zed-sharing-node/issues">Report Bug</a>
@@ -22,10 +21,9 @@
 
 ## About The Project
 
-This is the Front End for Zed, a file sharing platform built with modern technologies
-❤️➕🌑
+This is the Frontend for Zed, a file sharing platform built with modern technologies ⌨️
 
-### Built with
+### Built with ✨
 
 - [ReactJS](https://reactjs.org/)
 - [MobX](https://mobx.js.org/)
@@ -57,12 +55,12 @@ To get a local copy up and running follow these simple steps.
 
 <!-- CONTRIBUTING -->
 
-## Contributing
+## Contributing ➕
 
 You rock! Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull
-request. You can also simply open an issue with the tag "enhancement". Don't forget to give the
+request. You can also simply open an issue with any appropriate tag. Don't forget to give the
 project a star! Thanks again!
 
 1. Fork the Project
@@ -73,7 +71,7 @@ project a star! Thanks again!
 
 <!-- LICENSE -->
 
-## License
+## License 📜
 
 Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
 
