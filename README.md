@@ -1,4 +1,4 @@
-<img src='public/banner.jpg' alt='banner'>
+<video src='public/zed-showcase.mp4'></video>
 
 <div align="center">
   <a href="https://github.com/lucky-chap/zed-sharing-react/">
