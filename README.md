@@ -1,7 +1,7 @@
 <img src='public/banner.jpg' alt='banner'>
 
 <div align="center">
-  <a href="https://github.com/lucky-chap/zed-sharing-node/">
+  <a href="https://github.com/lucky-chap/zed-sharing-react/">
     <img src="public/android-chrome-512x512.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -11,17 +11,17 @@
     Frontend for file sharing app built with the MERN Stack
     <br />
     <br />
-    <a href="https://github.com/lucky-chap/zed-sharing-node/issues">Report Bug</a>
+    <a href="https://github.com/lucky-chap/zed-sharing-react/issues">Report Bug</a>
     ·
-    <a href="https://github.com/lucky-chap/zed-sharing-node/issues">Request Feature</a>
+    <a href="https://github.com/lucky-chap/zed-sharing-react/issues">Request Feature</a>
   </p>
 </div>
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## About The Project 😶‍🌫️
 
-This is the Frontend for Zed, a file sharing platform built with modern technologies ⌨️
+This is the Frontend for Zed, a file sharing platform built with modern technologies ⌨️ You can find the backend code [here](https://github.com/lucky-chap/zed-sharing-node)
 
 ### Built with ✨
 
@@ -33,7 +33,7 @@ This is the Frontend for Zed, a file sharing platform built with modern technolo
 
 <!-- GETTING STARTED -->
 
-## Running the app locally
+## Running the app locally 🏠
 
 To get a local copy up and running follow these simple steps.
 
