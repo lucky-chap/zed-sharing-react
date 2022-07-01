@@ -3,10 +3,12 @@ import styled from "styled-components";
 import adapter from "webrtc-adapter";
 import Sharing from "./pages/Sharing";
 import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 const Wrapper = styled.div`
   height: 100%;
   background-color: #111827;
+  min-height: 100vh;
 `;
 
 const App = (): React.ReactElement => {
@@ -18,6 +20,7 @@ const App = (): React.ReactElement => {
     <Wrapper>
       <Navbar />
       <Sharing />
+      <Footer />
     </Wrapper>
   );
 };
