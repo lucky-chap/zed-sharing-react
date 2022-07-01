@@ -21,7 +21,13 @@
 
 ## About The Project 😶‍🌫️
 
-This is the Frontend for Zed, a file sharing platform built with modern technologies ⌨️ You can find the backend code [here](https://github.com/lucky-chap/zed-sharing-node)
+This is the Frontend for Zed, a file sharing platform I built for the Linode and Hashnode Hackathon ✨🎉 You can find the backend code [here](https://github.com/lucky-chap/zed-sharing-node)
+
+
+
+https://user-images.githubusercontent.com/67266933/176912398-c245deb3-ab90-40f0-a7f9-f059fe49445c.mp4
+
+
 
 ### Built with ✨
 
